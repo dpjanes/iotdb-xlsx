@@ -6,7 +6,6 @@
 #   2018-05-30
 #
 
-exit 0
 PACKAGE=iotdb-xlsx
 DIST_ROOT=/var/tmp/.dist.$$
 
