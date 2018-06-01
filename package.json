@@ -4,6 +4,7 @@
         "url": "https://github.com/dpjanes/iotdb-xlsx/issues"
     }, 
     "dependencies": {
+        "csvtojson": "~2.0.3", 
         "iotdb-helpers": "~3.2.16", 
         "xlsx": "~0.12.13"
     }, 
