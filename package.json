@@ -4,9 +4,9 @@
         "url": "https://github.com/dpjanes/iotdb-xlsx/issues"
     }, 
     "dependencies": {
-        "csvtojson": "~2.0.7", 
-        "iotdb-helpers": "~3.2.18", 
-        "xlsx": "~0.13.3"
+        "csvtojson": "~2.0.8", 
+        "iotdb-helpers": "~3.2.20", 
+        "xlsx": "~0.14.0"
     }, 
     "description": "Pipe Oriented Programming", 
     "homepage": "https://github.com/dpjanes/node-iotdb", 
@@ -22,5 +22,5 @@
         "cover": "nyc --reporter=html mocha --recursive", 
         "test": "mocha --recursive --bail"
     }, 
-    "version": "1.0.4"
+    "version": "1.0.5"
 }
