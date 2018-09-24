@@ -41,7 +41,54 @@ const action = name => {
 
 if (action("create")) {
     _.promise.make({
+        path: "sample.xlsx",
+        jsons: [
+            [ "A", "B", "C" ],
+            [ new Date(), null, true ],
+            [ 1, 2, 3 ],
+        ]
     })
+        .then(xlsx.create)
+        .then(_.promise.make(sd => {
+            console.log("+", "ok")
+        }))
+        .catch(error => {
+            console.log("#", _.error.message(error))
+            process.exit(1)
+        })
+} else if (action("create-dictionary")) {
+    _.promise.make({
+        path: "sample.xlsx",
+        header: [ 
+            {
+                "name": "When",
+                "key": "date",
+            },
+            {
+                "name": "Reason",
+                "key": "reason",
+            },
+            "weight",
+        ],
+        jsons: [
+            {
+                date: new Date("2001-01-01"),
+                reason: "IDK",
+                weight: 100,
+            },
+            {
+                date: new Date("2012-12-25"),
+                reason: null,
+                weight: 100,
+            },
+            {
+                date: new Date(),
+                reason: "This is the latest",
+                weight: 200,
+            },
+        ]
+    })
+        .then(xlsx.create)
         .then(_.promise.make(sd => {
             console.log("+", "ok")
         }))
