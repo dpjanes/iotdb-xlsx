@@ -49,6 +49,7 @@ if (action("create")) {
         ]
     })
         .then(xlsx.create)
+        .then(xlsx.save)
         .then(_.promise.make(sd => {
             console.log("+", "ok")
         }))
@@ -59,6 +60,7 @@ if (action("create")) {
 } else if (action("create-dictionary")) {
     _.promise.make({
         path: "sample.xlsx",
+        sheet_name: "When and Why",
         header: [ 
             {
                 "name": "When",
@@ -89,6 +91,7 @@ if (action("create")) {
         ]
     })
         .then(xlsx.create)
+        .then(xlsx.save)
         .then(_.promise.make(sd => {
             console.log("+", "ok")
         }))
