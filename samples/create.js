@@ -24,6 +24,7 @@
 
 const _ = require("iotdb-helpers")
 const xlsx = require("..")
+const fs = require("iotdb-fs")
 
 const assert = require("assert")
 
@@ -92,6 +93,26 @@ if (action("create")) {
     })
         .then(xlsx.create)
         .then(xlsx.save)
+        .then(_.promise.make(sd => {
+            console.log("+", "ok")
+        }))
+        .catch(error => {
+            console.log("#", _.error.message(error))
+            process.exit(1)
+        })
+} else if (action("create-buffer")) {
+    _.promise.make({
+        path: "sample-2.xlsx",
+        jsons: [
+            [ "A", "B", "C" ],
+            [ new Date(), null, true ],
+            [ 1, 2, 3 ],
+        ]
+    })
+        .then(xlsx.create)
+        .then(xlsx.to.buffer)
+        .then(fs.remove)
+        .then(fs.write)
         .then(_.promise.make(sd => {
             console.log("+", "ok")
         }))
