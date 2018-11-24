@@ -1,5 +1,5 @@
 # iotdb-xlsx
-POP XLXS spreadsheet handling
+POP XLXS and CSV spreadsheet handling
 
 # Examples
 
