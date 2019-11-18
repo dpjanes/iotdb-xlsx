@@ -4,9 +4,9 @@
         "url": "https://github.com/dpjanes/iotdb-xlsx/issues"
     }, 
     "dependencies": {
-        "csvtojson": "~2.0.8", 
-        "iotdb-helpers": "~3.3.2", 
-        "xlsx": "~0.14.1"
+        "csvtojson": "~2.0.10", 
+        "iotdb-helpers": "~3.4.2", 
+        "xlsx": "~0.15.2"
     }, 
     "description": "Pipe Oriented Programming", 
     "homepage": "https://github.com/dpjanes/node-iotdb", 
